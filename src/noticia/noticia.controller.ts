@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { NoticiaService } from './noticia.service';
 import { CreateNoticiaDto, updateNoticiaDto } from './dto/noticia.dto';
 
