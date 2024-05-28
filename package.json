@@ -72,11 +72,7 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/src/",
-      "<rootDir>/libs/"
-    ],
-    "moduleNameMapper": {
-      "^@app/busca-cep(|/.*)$": "<rootDir>/libs/busca-cep/src/$1"
-    }
+      "<rootDir>/src/"
+    ]
   }
 }
