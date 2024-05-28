@@ -1,14 +1,6 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Post,
-  Put,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { NoticiaService } from './noticia.service';
-import { CreateNoticiaDto, updateNoticiaDto } from './dto/noticia.dto';
+import { CreateNoticiaDto, UpdateNoticiaDto } from './dto/noticia.dto';
 
 @Controller('noticia')
 export class NoticiaController {
@@ -27,9 +19,9 @@ export class NoticiaController {
   }
 
   @Put()
-  async updateNoticia(@Body() updateNoticiaDto: updateNoticiaDto) {
+  async updateNoticia(@Body() UpdateNoticiaDto: UpdateNoticiaDto) {
     console.log('updateNoticia');
-    return await this.NoticiaService.updateNoticia(updateNoticiaDto);
+    return await this.NoticiaService.updateNoticia(UpdateNoticiaDto);
   }
   @Delete(':id')
   async deleteNoticia(@Param('id') id: string) {
