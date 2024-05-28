@@ -7,7 +7,6 @@ export class CepController {
 
   @Get(':cep')
   async getCep(@Param('cep') cep: string) {
-    console.log("sadasdasda", cep);
     return this.CepService.getCep(cep);
   }
 }

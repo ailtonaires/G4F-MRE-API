@@ -4,23 +4,23 @@ import {
 } from 'class-validator';
 
 export class CreateNoticiaDto {
-  @IsNotEmpty()
-  @MinLength(5)
+  @IsNotEmpty({ message: 'O título não pode estar vazio' })
+  @MinLength(5, { message: 'O título deve ter pelo menos 5 caracteres' })
   titulo: string;
 
-  @IsNotEmpty()
-  @MinLength(5)
+  @IsNotEmpty({ message: 'A descrição não pode estar vazia' })
+  @MinLength(5, { message: 'A descrição deve ter pelo menos 5 caracteres' })
   descricao: string;
 }
 
-export class updateNoticiaDto {
-  id: number;
+export class UpdateNoticiaDto {
+  id: string;
 
-  @IsNotEmpty()
-  @MinLength(5)
+  @IsNotEmpty({ message: 'O título não pode estar vazio' })
+  @MinLength(5, { message: 'O título deve ter pelo menos 5 caracteres' })
   titulo: string;
 
-  @IsNotEmpty()
-  @MinLength(5)
+  @IsNotEmpty({ message: 'A descrição não pode estar vazia' })
+  @MinLength(5, { message: 'A descrição deve ter pelo menos 5 caracteres' })
   descricao: string;
 }
