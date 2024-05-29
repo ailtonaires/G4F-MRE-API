@@ -1,6 +1,7 @@
 # G4F-MRE-API
 
-Pré requisitos: 
+Pré requisitos:
+
 - Node.js 18.19.1
 - npm 10.2.1
 - npx 10.2.1
@@ -14,77 +15,93 @@ Pré requisitos:
 Para rodar o projeto localmente (sem Docker):
 
 1. Clone o repositório:
+
 ```bash
 git clone git@github.com:ailtonaires/G4F-MRE-API.git
 ```
 
 2. Acesse a pasta do projeto:
+
 ```bash
 cd G4F-MRE-API
 ```
 
 3. Instale as dependências:
+
 ```bash
 npm install
 ```
 
 4. Execute o projeto:
+
 ```bash
 npm run start
 ```
 
 5. Acesse o projeto no navegador:
+
 ```bash
 http://localhost:3001
 ```
 
 6. Acesse o json-server no navegador:
+
 ```bash
 http://localhost:5002
 ```
 
 7. Para rodar os testes:
+
 ```bash
 npm run test
 ```
 
 ## Instruções para rodar o projeto com Docker
 
-Para rodar o projeto localmente (com Docker):
+Para rodar o projeto localmente (com Docker com o frontend e backend):
 
 1. Clone o repositório:
+
 ```bash
 git clone clone git@github.com:ailtonaires/G4F-MRE-API.git
 ```
 
-2. Acesse a pasta do projeto:
+2. Clone o repositório:
+
 ```bash
-cd G4F-MRE-API
+git clone git@github.com:ailtonaires/G4F-MRE.git
 ```
 
-3. Execute o projeto:
+3. Acesse a pasta do projeto:
+
 ```bash
-docker-compose up
+cd G4F-MRE/
 ```
 
-4. Acesse o projeto no navegador:
+4. Vá até o arquivo G4F-MRE-API/src/config/apiNoticias.ts e descomente a linha 3 e comente a linha 4.
+
+5. Execute o projeto:
+
 ```bash
-http://localhost:3001
+make run
 ```
 
-5. Acesse o json-server no navegador:
+6. Acesse o projeto no navegador:
+
 ```bash
-http://localhost:5002
+http://localhost:3000
 ```
 
-6. Para rodar os testes:
+7. Para derrubar o projeto:
+
 ```bash
-docker-compose run --rm app npm run test
+make down
 ```
 
 ## Documentação da API
 
 A documentação da API pode ser acessada em:
+
 ```bash
 http://localhost:3001/docs
 ```
@@ -132,6 +149,3 @@ G4F-MRE-API
 └── tsconfig.json
 
 ```
-
-
-
