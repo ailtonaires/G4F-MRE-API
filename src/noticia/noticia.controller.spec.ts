@@ -3,6 +3,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { NoticiaController } from './noticia.controller';
 import { NoticiaService } from './noticia.service';
 import { CreateNoticiaDto, UpdateNoticiaDto } from './dto/noticia.dto';
+import { Noticia } from './types';
 
 const feature = loadFeature('./tests/noticia.feature');
 
@@ -22,7 +23,7 @@ defineFeature(feature, test => {
   });
 
   test('Obter lista de notícias', ({ given, when, then }) => {
-    let noticias;
+    let noticias: { noticias: Noticia[]}
 
     given('que existem notícias cadastradas', () => {
       noticias = {
@@ -59,7 +60,7 @@ defineFeature(feature, test => {
 
   test('Criar uma nova notícia', ({ given, when, then }) => {
     let newNoticia: CreateNoticiaDto;
-    let createdNoticia;
+    let createdNoticia : UpdateNoticiaDto;
     let returnedNoticia: UpdateNoticiaDto;
 
     given('que eu tenho uma nova notícia para criar', () => {
@@ -88,7 +89,7 @@ defineFeature(feature, test => {
 
   test('Atualizar uma notícia existente', ({ given, when, then }) => {
     let updatedNoticia: UpdateNoticiaDto;
-    let result;
+    let result: UpdateNoticiaDto;
 
     given('que existe uma notícia cadastrada', () => {
       updatedNoticia = {
@@ -110,7 +111,7 @@ defineFeature(feature, test => {
 
   test('Deletar uma notícia existente', ({ given, when, then }) => {
     let noticiaId: string;
-    let result;
+    let result: boolean;
 
     given('que existe uma notícia cadastrada', () => {
       noticiaId = 'a78b';
